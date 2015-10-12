@@ -6,40 +6,48 @@
   <script src = "js/jquery-1.11.3.js"></script>
   <script src = "js/scripts.js"></script>
     <title>Just Jquery Stuff</title>
-</head
+</head>
 
 <body>
-  <div class = "container">
+<div class = "container">
 
 <h1>Enter some of your favorite things!</h1>
 
 
-
-<div class="form-group has-success has-feedback">
-  <label class="control-label" for="inputSuccess2"></label>
-  <input type="text" class="form-control" id="favors1" aria-describedby="inputSuccess2Status">
-
-  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-  <span id="inputSuccess2Status" class="sr-only">(success)</span>
-</div>
-
-<p>
-  <button type="button" class="btn btn-primary btn-lg" id="show">Show Me My Favorite!</button>
-
-</p>
-
-<ul class="unstyled">
-
-
-
-</ul>
-
-
-
-
-
-
+  <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputSuccess2"></label>
+        <input type="text" class="form-control" id="favors1" aria-describedby="inputSuccess2Status">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
   </div>
+    <div class="row">
+      <div class ="col-sm-6">
+      <button type="button" class="btn btn-primary btn-lg" id="show">Show Me My Favorite!</button>
+      <ul id="fav"></ul>
+      </div>
+
+    <div class = "col-sm-6">
+      <h1>Enter your Top 5 favorite foods!</h1>
+      <input type="text" class="form-control" id ="1" placeholder="Fav Food #1">
+      <input type="text" class="form-control" id ="2" placeholder="Fav Food #2">
+      <input type="text" class="form-control" id ="3" placeholder="Fav Food #3">
+      <input type="text" class="form-control" id ="4" placeholder="Fav Food #4">
+      <input type="text" class="form-control" id ="5" placeholder="Fav Food #5">
+
+      <button type="button" class="btn btn-primary btn-lg" id="showfood">Show Me The YumYums!</button>
+
+        <div class = invis>
+          <ul>
+          <li class= foo1></li>
+          <li class = foo2></li>
+          <li class = foo3>foo3</li>
+          <li class = foo4>foo4</li>
+          <li class = foo5>foo5</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
 </body>
 
 </html>
