@@ -1,29 +1,23 @@
-$(document).ready(function() {
-  $("button#hello").click(function() {
-  $("ul#user").prepend("<li>Hello!</li>");
-  $("ul#web").prepend("<li>Oh Hey</li>");
-  $(this).remove();
 
+$(document).ready(function (){
+  $("h1").click(function(){
+    alert("Here we go");
   });
 
-  $("button#goodbye").click(function() {
-    $("ul").prepend("<li>Goodbye!</li>");
-  });
-
-  $("button#stop").click(function() {
-    $("ul").prepend("<li>Stop copying me!</li>");
-  });
+  $("#show").click(function(){
+var fav1input = $("input#favors1").val();
+// $(this).css("list-style-type", "square");
 
 
-  $("button#stop").click(function() {
-    $("ul").prepend("<li>Stop copying me!</li>");
-  });
+//    $(".fav1").text(fav1input);
+  
+$("ul").append("<li>"+fav1input+"</li>");
 
 
 
 
+  })
 
 
 
-
-});
+})
