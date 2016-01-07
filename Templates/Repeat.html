@@ -1,0 +1,36 @@
+<script type = "text/ng-template" id = "repeat.html">
+
+<div class = "add">
+ <input  id = "newy" ng-model="addition" type = "text"/>
+ <input  id = "link" ng-model="link" type = "text">Your Link Here</input>
+ <button ng-click="update()">Add</button>
+  
+  
+  </div>
+  //////////////////////////////////////////////////////////
+  <div ng-repeat="x in Listables | orderBy: '-votes'">
+    </br>
+  
+  <!--<label ng-hide = "editing" class = "editing">{{x.name}}</label>-->
+  <div class = "funbox">
+  <label>{{x.votes}}</label>
+  <a ng-hide = "editing" class = "editing" href = {{x.link}}>{{x.name}}<a/>
+   
+   
+  <button ng-model = "x.votes" ng-click ="x.votes = x.votes + 1" >UpVote</button>
+  <!--<input ng-model = "x.name" class = "editing" type = "text"/>-->
+  
+ 
+
+<div class = "actions">
+  
+  <a href = "">Save</a>
+  <a ng-click = "editing = !editing" href = "">Edit</a>
+
+  </div>
+  </div>
+  </div>
+  /////////////////////////////////////////////////////
+  {{Listables}}
+  
+  </script>

@@ -1,53 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="css/bootstrap.css" rel="stylesheet" type="css.text" media="all">
+  <link href="css/bootstrap.css" rel="stylesheet" type="css.text" media="all">s
   <link href = "css/styles.css" rel="stylesheet" type="css.text" media="all">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <script src = "js/jquery-1.11.3.js"></script>
-  <script src = "js/scripts.js"></script>
-    <title>Just Jquery Stuff</title>
+
+<title>Blank</title>
 </head>
 
-<body>
-<div class = "container">
+<body ng-app = "myListApp" >
+<div class = "container-fluid">
+<hi-hi></hi-hi>
+        
 
-<h1>Enter some of your favorite things!</h1>
+ <hi></hi>
 
-
-  <div class="form-group has-success has-feedback">
-        <label class="control-label" for="inputSuccess2"></label>
-        <input type="text" class="form-control" id="favors1" aria-describedby="inputSuccess2Status">
-        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+<div ng-app = "myListApp" ng-controller = "mainCtrl" class = "list">
+  
+ <h1 ng-click ="howdyThere()">My To Dos</h1>
+ 
+ <div class="row">
+    <div class = "add">
+ <input  id = "newy" ng-model="addition" type = "text"/>
+ <input  id = "link" ng-model="link" type = "text">Your Link Here</input>
+ <button ng-click="update()">Add</button>
+  
+  
   </div>
-    <div class="row">
-      <div class ="col-sm-6">
-      <button type="button" class="btn btn-primary btn-lg" id="show">Show Me My Favorite!</button>
-      <ul id="fav"></ul>
-      </div>
+   
+ <!--//////////////////////////////////////////////////-->
+ <div class = "col-md-10">
+ 
 
-    <div class = "col-sm-6">
-      <h1>Enter your Top 5 favorite foods!</h1>
-      <input type="text" class="form-control" id ="1" placeholder="Fav Food #1">
-      <input type="text" class="form-control" id ="2" placeholder="Fav Food #2">
-      <input type="text" class="form-control" id ="3" placeholder="Fav Food #3">
-      <input type="text" class="form-control" id ="4" placeholder="Fav Food #4">
-      <input type="text" class="form-control" id ="5" placeholder="Fav Food #5">
 
-      <button type="button" class="btn btn-primary btn-lg" id="showfood">Show Me The YumYums!</button>
+  <div class = "funbox" ng-repeat="x in Listables | orderBy: '-votes'">
+    </br>
+  
+  <!--<label ng-hide = "editing" class = "editing">{{x.name}}</label>-->
+ 
+  <label>{{x.votes}}</label>
+  <a ng-hide = "editing" class = "editing" href = {{x.link}}>{{x.name}}<a/>
+   
+   
+  <button ng-model = "x.votes" ng-click ="x.votes = x.votes + 1" >UpVote</button>
+  <!--<input ng-model = "x.name" class = "editing" type = "text"/>-->
+  
+ 
 
-        <div class = invis>
-          <ul>
-          <li class= foo1></li>
-          <li class = foo2></li>
-          <li class = foo3>foo3</li>
-          <li class = foo4>foo4</li>
-          <li class = foo5>foo5</li>
-          </ul>
-        </div>
-      </div>
+<div class = "actions">
+  
+  <a href = "">Save</a>
+  <a ng-click = "editing = !editing" href = "">Edit</a>
+
   </div>
+  
+  </div>
+  <!--/////////////////////////////////////////////////////-->
+  <!--{{Listables}}-->
+  
 </div>
+<div class = "col-md-2">
+  <div class = "sidebar">
+    
+    
+    </div>
+  
+  </div>
+
+  
+  
+
+  </div> 
+  </div>
+
+     <!--<div ng-controller = "mainCtrl" class = "list">
+       <div class = "add">
+         <a href = "" ng-click="addTodo()">+ Add a New Task<a/>
+         
+         </div>
+       
+      <div class = "item" ng-class = "{'editing-item': editing, 'edited':todo.edited, 'completed':todo.completed}" 
+        ng-repeat = "todo in toDoList | orderBy: 'completed' : true" ng-init = "todo.completed" = false">
+      <input ng-model = "todo.completed" ng-click = "todo.completed = !todo.completed" type = "checkbox"/>     
+       <label  ng-hide="editing" class = "editing-label">{{todo.name}}</label>
+       <input ng-change = "todo.edited = true" ng-blur = "editing = false" ng-show ="editing" ng-model = "todo.name" class = "editing-label" type = "text"/>
+        <div class = "actions">
+          <a href = "" ng-click="editing = !editing">edit</a>
+          <a href = "" ng-click = "helloConsole()">save</a>
+          <a href = "" class = "delete" ng-click = "helloWorld()">delete</a>
+          </div>
+          
+          </div>
+          
+          
+                            {{toDoList}}
+   </div>-->
+
+
+
+
+</div>
+
+
+
+
+<script src = "js/angularscripts.js" type="text/javascript" ></script>
+<script src = "js/directive.js" type="text/javascript" ></script>
+
+
 </body>
 
 </html>
